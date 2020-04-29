@@ -3,11 +3,13 @@ package com.example.lab1;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,5 +61,13 @@ public class MainActivity extends Activity {
         }
         if (chbStack.isChecked()) fTrans.addToBackStack(null);
         fTrans.commit();
+    }
+    public void showToast(View view) {
+        //создаём и отображаем текстовое уведомление
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "Пора показать  Toast!",
+                Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 }

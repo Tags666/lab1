@@ -38,9 +38,10 @@
             android:text="@string/stack">
         </CheckBox>
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/frgmCont"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        android:layout_height="554dp"/>
+
 </LinearLayout>
