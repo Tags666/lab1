@@ -4,24 +4,43 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends Activity {
 
     Fragment1 frag1;
     Fragment2 frag2;
     FragmentTransaction fTrans;
+
+    @BindView(R.id.btnAdd)
+    Button btnAdd;
+    @BindView(R.id.btnRemove)
+    Button btnRemove;
+    @BindView(R.id.btnReplace)
+    Button btnReplace;
+    @BindView(R.id.chbStack)
     CheckBox chbStack;
+    @BindView(R.id.frgmCont)
+    FrameLayout frgmCont;
+    @BindView(R.id.LinearLayout1)
+    LinearLayout LinearLayout1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         frag1 = new Fragment1();
         frag2 = new Fragment2();
 
-        chbStack = (CheckBox)findViewById(R.id.chbStack);
+        chbStack = (CheckBox) findViewById(R.id.chbStack);
     }
 
     public void onClick(View v) {
