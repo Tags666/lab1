@@ -6,49 +6,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="430dp"
+        android:layout_height="328dp"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:text="@string/add">
-        </Button>
+            android:text="@string/add"></Button>
+
         <Button
             android:id="@+id/btnRemove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:text="@string/remove">
-        </Button>
+            android:text="@string/remove"></Button>
+
         <Button
             android:id="@+id/btnReplace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:text="@string/replace">
-        </Button>
+            android:text="@string/replace"></Button>
+
         <CheckBox
             android:id="@+id/chbStack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stack">
-        </CheckBox>
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/frgmCont"
-        android:layout_width="match_parent"
-        android:layout_height="554dp">
+            android:text="@string/stack"></CheckBox>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnInfoToast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Показать Toast" />
-    </FrameLayout>
+            android:onClick="onClick"
+            android:text="Show Toast"></Button>
+
+        <FrameLayout
+            android:id="@+id/frgmCont"
+            android:layout_width="match_parent"
+            android:layout_height="554dp">
+
+
+            <Button
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="продолжение лабораторной работы1" />
+        </FrameLayout>
+    </LinearLayout>
 
 </LinearLayout>
