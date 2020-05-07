@@ -9,8 +9,28 @@
 
     <LinearLayout
         android:layout_width="430dp"
-        android:layout_height="328dp"
+        android:layout_height="834dp"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Текст" />
+
+        <EditText
+            android:id="@+id/edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите текст"
+            />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="359dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Старт" />
 
         <Button
             android:id="@+id/btnAdd"
@@ -46,19 +66,20 @@
             android:onClick="onClick"
             android:text="Show Toast"></Button>
 
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="лабораторная работа № 2" />
+
         <FrameLayout
             android:id="@+id/frgmCont"
             android:layout_width="match_parent"
             android:layout_height="554dp">
 
-
-            <Button
-                android:id="@+id/buttonBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="onClick"
-                android:text="продолжение лабораторной работы1" />
         </FrameLayout>
+
     </LinearLayout>
 
 </LinearLayout>

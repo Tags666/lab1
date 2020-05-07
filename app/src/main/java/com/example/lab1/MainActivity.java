@@ -15,10 +15,13 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
+
 import butterknife.BindView;
 
 public class MainActivity extends Activity implements View.OnClickListener {
-
+    EditText editText;
+    Button button;
+    TextView textView;
     Button buttonClick;
     Fragment1 frag1;
     Fragment2 frag2;
@@ -38,8 +41,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     LinearLayout LinearLayout1;
     @BindView(R.id.btnInfoToast)
     Button btnToast;
+    @BindView(R.id.btn)
+    Button btn;
 
-    Button button;
 
     Button mCrowsCounterButton;
     TextView mInfoTextView;
@@ -47,7 +51,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        editText=(EditText)findViewById(R.id.edittext);
+        button=(Button)findViewById(R.id.btn);
 
+        textView=(TextView)findViewById(R.id.textView);
         Button buttonBack = (Button)findViewById(R.id.buttonBack);
         buttonBack.setOnClickListener(this);
         buttonClick = (Button) findViewById(R.id.btnInfoToast);
@@ -55,7 +62,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         buttonClick = (Button) findViewById(R.id.btnInfoToast);
         buttonClick.setOnClickListener(this);
         infoToast.setOnClickListener(this);
-
+        button.setOnClickListener(this);
 
 frag1 = new Fragment1();
         frag2 = new Fragment2();
@@ -69,7 +76,18 @@ frag1 = new Fragment1();
 
         fTrans = getFragmentManager().beginTransaction();
         switch (v.getId()) {
+            case R.id.btn:
+
+                String value=editText.getText().toString();
+
+                textView.setText("Ваш текст "+value);
+
+               Toast.makeText(this,"Результат "+value,Toast.LENGTH_SHORT).show();
+
+
+                break;
             case R.id.btnAdd:
+
                 fTrans.add(R.id.frgmCont, frag1);
                 break;
             case R.id.btnRemove:
@@ -79,8 +97,9 @@ frag1 = new Fragment1();
                 fTrans.replace(R.id.frgmCont, frag2);
             default:
                 break;
+
             case R.id.btnInfoToast:
-                Toast toast = Toast.makeText(getApplicationContext(),"Показать Toast",Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getApplicationContext(),"Показать мое сообщение Toast",Toast.LENGTH_LONG);
                 toast.show();
                 break;
             case R.id.buttonBack:
@@ -93,7 +112,6 @@ frag1 = new Fragment1();
 
 
                 break;
-
 
 
         }
